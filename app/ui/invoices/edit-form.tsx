@@ -18,6 +18,9 @@ export default function EditInvoiceForm({
     invoice: InvoiceForm;
     customers: CustomerField[];
 }) {
+    // updateInvoice関数に固定の引数 "invoice.id" をバインドして新しい関数を作成。
+    // この結果、updateInvoiceWithId関数は "formData" 引数のみを受け取る形になる。
+    // 目的は、毎回 "invoice.id" を渡す手間を省き、コードを簡潔にすること。
     const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 
     return (
